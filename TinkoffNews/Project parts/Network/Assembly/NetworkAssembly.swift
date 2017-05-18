@@ -7,19 +7,11 @@
 public class NetworkAssembly: Assembly {
     
     public class func assemble(container: Container) {
-        //NetworkRequestProcessor
-        container.register(NetworkRequestProcessorProtocol.self) { r in
-            NetworkRequestProcessor()
-        }
         
         //NetworkRequestFactory
         container.register(NetworkRequestFactoryProtocol.self) { r in
             NetworkRequestFactory(baseURL: NetworkKeys.APIBaseURL)
         }
-    }
-    
-    public class func networkRequestProcessor() -> NetworkRequestProcessorProtocol {
-        return container.resolve(NetworkRequestProcessorProtocol.self)!
     }
     
     public class func networkRequestFactory() -> NetworkRequestFactoryProtocol {

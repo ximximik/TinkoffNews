@@ -9,15 +9,11 @@ extension UIViewController {
         return String(describing: self)
     }
     
-    class func instantiate(storyboard: Storyboard) -> Self {
+    class func instantiate(storyboard: UIStoryboard) -> Self {
         return _instantiate(storyboard: storyboard)
     }
     
-    class func instantiate<T: Storyboard>(storyboard: T.Type) -> Self {
-        return _instantiate(storyboard: storyboard.storyboard())
-    }
-    
-    private class func _instantiate<T>(storyboard: Storyboard) -> T {
+    private class func _instantiate<T>(storyboard: UIStoryboard) -> T {
         return storyboard.instantiateViewController(withIdentifier: self.describing) as! T
     }
 }

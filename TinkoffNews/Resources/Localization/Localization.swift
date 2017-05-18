@@ -7,4 +7,7 @@ import Foundation
 
 public enum Localization {
     
+    enum News {
+        static let reloadText = "News.reloadText".localized
+    }
 }

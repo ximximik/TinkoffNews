@@ -25,9 +25,10 @@ public class Storyboard {
         return Storyboard()
     }
     
-    public func instantiateViewController(withIdentifier identifier: String) -> UIViewController {
-        let viewController = _storyboard.instantiateViewController(withIdentifier: identifier)
-        container?.resolveInjection(viewController)
+    public class func instantiate<T: UIViewController>(_ viewControllerType: T.Type) -> T {
+        let storyboard = self.storyboard()
+        let viewController = T.instantiate(storyboard: storyboard._storyboard)
+        storyboard.container?.resolveInjection(viewController)
         return viewController
     }
 }

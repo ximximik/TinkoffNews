@@ -27,7 +27,8 @@ public class AssemblyCenter {
     
     private var assemblies: [Assembly.Type] {
         return [NetworkAssembly.self,
-                ServicesAssembly.self]
+                ServicesAssembly.self,
+                NewsAssembly.self]
     }
     
     //Storyboard
@@ -44,5 +45,9 @@ extension AssemblyCenter {
     
     public func servicesAssembly() -> ServicesAssembly.Type {
         return ServicesAssembly.self
+    }
+    
+    public func newsAssembly() -> NewsAssembly {
+        return NewsAssembly()
     }
 }

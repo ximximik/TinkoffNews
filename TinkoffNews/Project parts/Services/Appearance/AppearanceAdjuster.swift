@@ -9,8 +9,6 @@ public protocol AppearanceAdjuster {
     func setupAppearance()
 }
 
-let tabBarItemTitleFontSize: CGFloat = 12.0
-
 public class AppearanceAdjusterDefault: AppearanceAdjuster {
     
     public func setupAppearance() {

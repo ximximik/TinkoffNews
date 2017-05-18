@@ -10,3 +10,6 @@
 
 //Errors
 "invalidServerResponseErrorText" = "Invalid server response. Failed to parse";
+
+//News
+"News.reloadText" = "Updating news...";

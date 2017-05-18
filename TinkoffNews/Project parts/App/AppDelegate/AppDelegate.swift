@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let controller = window?.rootViewController as? UINavigationController {
             controller.viewControllers.removeAll()
         }
-        window?.rootViewController = UIViewController()
+        
+        window?.rootViewController = UINavigationController(rootViewController: NewsStoryboard.newsViewController())
     }
 }
