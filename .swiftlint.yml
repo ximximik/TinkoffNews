@@ -1,0 +1,14 @@
+disabled_rules:
+  - mark
+  - trailing_whitespace
+  - force_cast
+  - force_try
+  - line_length
+  - vertical_whitespace
+  - variable_name
+  - opening_brace
+  - unused_closure_parameter
+  - function_parameter_count
+  - nesting
+excluded:
+  - Pods

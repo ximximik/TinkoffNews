@@ -7,12 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E3791AC81ECD5B1D003D638B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791AC71ECD5B1D003D638B /* AppDelegate.swift */; };
-		E3791ACA1ECD5B1D003D638B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791AC91ECD5B1D003D638B /* ViewController.swift */; };
-		E3791ACD1ECD5B1D003D638B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3791ACB1ECD5B1D003D638B /* Main.storyboard */; };
-		E3791ACF1ECD5B1D003D638B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3791ACE1ECD5B1D003D638B /* Assets.xcassets */; };
-		E3791AD21ECD5B1D003D638B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3791AD01ECD5B1D003D638B /* LaunchScreen.storyboard */; };
 		E3791ADD1ECD5B1D003D638B /* TinkoffNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791ADC1ECD5B1D003D638B /* TinkoffNewsTests.swift */; };
+		E3791B2D1ECD64B2003D638B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791AEA1ECD64B2003D638B /* AppDelegate.swift */; };
+		E3791B2E1ECD64B2003D638B /* AssemblyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791AEC1ECD64B2003D638B /* AssemblyCenter.swift */; };
+		E3791B2F1ECD64B2003D638B /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791AED1ECD64B2003D638B /* Assembly.swift */; };
+		E3791B311ECD64B2003D638B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791AF01ECD64B2003D638B /* Storyboard.swift */; };
+		E3791B3E1ECD64B2003D638B /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B0B1ECD64B2003D638B /* NetworkAssembly.swift */; };
+		E3791B3F1ECD64B2003D638B /* NetworkDataKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B0D1ECD64B2003D638B /* NetworkDataKeys.swift */; };
+		E3791B401ECD64B2003D638B /* RequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B0F1ECD64B2003D638B /* RequestProcessor.swift */; };
+		E3791B411ECD64B2003D638B /* AppearanceAdjuster.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B121ECD64B2003D638B /* AppearanceAdjuster.swift */; };
+		E3791B421ECD64B2003D638B /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B141ECD64B2003D638B /* ServicesAssembly.swift */; };
+		E3791B451ECD64B2003D638B /* ErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B191ECD64B2003D638B /* ErrorExtension.swift */; };
+		E3791B461ECD64B2003D638B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B1A1ECD64B2003D638B /* StringExtension.swift */; };
+		E3791B471ECD64B2003D638B /* UIView+InstantiateFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B1B1ECD64B2003D638B /* UIView+InstantiateFromNib.swift */; };
+		E3791B481ECD64B2003D638B /* UIViewController+SBStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B1C1ECD64B2003D638B /* UIViewController+SBStoryboard.swift */; };
+		E3791B491ECD64B2003D638B /* UnwrapExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B1D1ECD64B2003D638B /* UnwrapExtension.swift */; };
+		E3791B4C1ECD64B2003D638B /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B221ECD64B2003D638B /* UIColor+Colors.swift */; };
+		E3791B4D1ECD64B2003D638B /* UIViewController+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B231ECD64B2003D638B /* UIViewController+HUD.swift */; };
+		E3791B4E1ECD64B2003D638B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3791B261ECD64B2003D638B /* Assets.xcassets */; };
+		E3791B501ECD64B2003D638B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3791B281ECD64B2003D638B /* LaunchScreen.storyboard */; };
+		E3791B511ECD64B2003D638B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3791B2A1ECD64B2003D638B /* Localizable.strings */; };
+		E3791B521ECD64B2003D638B /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B2C1ECD64B2003D638B /* Localization.swift */; };
+		E3791B541ECD65BD003D638B /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B531ECD65BD003D638B /* Container.swift */; };
+		E3791B591ECD74B6003D638B /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B581ECD74B6003D638B /* RequestFactory.swift */; };
+		E3791B5B1ECD77E9003D638B /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791B5A1ECD77E9003D638B /* Assembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,15 +45,33 @@
 
 /* Begin PBXFileReference section */
 		E3791AC41ECD5B1D003D638B /* TinkoffNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3791AC71ECD5B1D003D638B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3791AC91ECD5B1D003D638B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E3791ACC1ECD5B1D003D638B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E3791ACE1ECD5B1D003D638B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E3791AD11ECD5B1D003D638B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E3791AD31ECD5B1D003D638B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3791AD81ECD5B1D003D638B /* TinkoffNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3791ADC1ECD5B1D003D638B /* TinkoffNewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffNewsTests.swift; sourceTree = "<group>"; };
 		E3791ADE1ECD5B1D003D638B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3791AEA1ECD64B2003D638B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3791AEC1ECD64B2003D638B /* AssemblyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblyCenter.swift; sourceTree = "<group>"; };
+		E3791AED1ECD64B2003D638B /* Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		E3791AF01ECD64B2003D638B /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		E3791B0B1ECD64B2003D638B /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
+		E3791B0D1ECD64B2003D638B /* NetworkDataKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDataKeys.swift; sourceTree = "<group>"; };
+		E3791B0F1ECD64B2003D638B /* RequestProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProcessor.swift; sourceTree = "<group>"; };
+		E3791B121ECD64B2003D638B /* AppearanceAdjuster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceAdjuster.swift; sourceTree = "<group>"; };
+		E3791B141ECD64B2003D638B /* ServicesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
+		E3791B191ECD64B2003D638B /* ErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorExtension.swift; sourceTree = "<group>"; };
+		E3791B1A1ECD64B2003D638B /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		E3791B1B1ECD64B2003D638B /* UIView+InstantiateFromNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+InstantiateFromNib.swift"; sourceTree = "<group>"; };
+		E3791B1C1ECD64B2003D638B /* UIViewController+SBStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SBStoryboard.swift"; sourceTree = "<group>"; };
+		E3791B1D1ECD64B2003D638B /* UnwrapExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwrapExtension.swift; sourceTree = "<group>"; };
+		E3791B221ECD64B2003D638B /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		E3791B231ECD64B2003D638B /* UIViewController+HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HUD.swift"; sourceTree = "<group>"; };
+		E3791B261ECD64B2003D638B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3791B271ECD64B2003D638B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3791B281ECD64B2003D638B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3791B2B1ECD64B2003D638B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E3791B2C1ECD64B2003D638B /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		E3791B531ECD65BD003D638B /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		E3791B581ECD74B6003D638B /* RequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		E3791B5A1ECD77E9003D638B /* Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +113,8 @@
 		E3791AC61ECD5B1D003D638B /* TinkoffNews */ = {
 			isa = PBXGroup;
 			children = (
-				E3791AC71ECD5B1D003D638B /* AppDelegate.swift */,
-				E3791AC91ECD5B1D003D638B /* ViewController.swift */,
-				E3791ACB1ECD5B1D003D638B /* Main.storyboard */,
-				E3791ACE1ECD5B1D003D638B /* Assets.xcassets */,
-				E3791AD01ECD5B1D003D638B /* LaunchScreen.storyboard */,
-				E3791AD31ECD5B1D003D638B /* Info.plist */,
+				E3791AE71ECD64B2003D638B /* Project parts */,
+				E3791B241ECD64B2003D638B /* Resources */,
 			);
 			path = TinkoffNews;
 			sourceTree = "<group>";
@@ -94,6 +126,188 @@
 				E3791ADE1ECD5B1D003D638B /* Info.plist */,
 			);
 			path = TinkoffNewsTests;
+			sourceTree = "<group>";
+		};
+		E3791AE71ECD64B2003D638B /* Project parts */ = {
+			isa = PBXGroup;
+			children = (
+				E3791AE81ECD64B2003D638B /* App */,
+				E3791B061ECD64B2003D638B /* Models */,
+				E3791B091ECD64B2003D638B /* Network */,
+				E3791B101ECD64B2003D638B /* Services */,
+				E3791B151ECD64B2003D638B /* Utils */,
+			);
+			path = "Project parts";
+			sourceTree = "<group>";
+		};
+		E3791AE81ECD64B2003D638B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E3791AE91ECD64B2003D638B /* AppDelegate */,
+				E3791AEB1ECD64B2003D638B /* Assembly */,
+				E3791AEF1ECD64B2003D638B /* Storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E3791AE91ECD64B2003D638B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E3791AEA1ECD64B2003D638B /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		E3791AEB1ECD64B2003D638B /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B5A1ECD77E9003D638B /* Assembler.swift */,
+				E3791AED1ECD64B2003D638B /* Assembly.swift */,
+				E3791AEC1ECD64B2003D638B /* AssemblyCenter.swift */,
+				E3791B531ECD65BD003D638B /* Container.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		E3791AEF1ECD64B2003D638B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E3791AF01ECD64B2003D638B /* Storyboard.swift */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		E3791B061ECD64B2003D638B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E3791B091ECD64B2003D638B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B0A1ECD64B2003D638B /* Assembly */,
+				E3791B0C1ECD64B2003D638B /* DataKeys */,
+				E3791B571ECD74B6003D638B /* Request factory */,
+				E3791B0E1ECD64B2003D638B /* Request processor */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E3791B0A1ECD64B2003D638B /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B0B1ECD64B2003D638B /* NetworkAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		E3791B0C1ECD64B2003D638B /* DataKeys */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B0D1ECD64B2003D638B /* NetworkDataKeys.swift */,
+			);
+			path = DataKeys;
+			sourceTree = "<group>";
+		};
+		E3791B0E1ECD64B2003D638B /* Request processor */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B0F1ECD64B2003D638B /* RequestProcessor.swift */,
+			);
+			path = "Request processor";
+			sourceTree = "<group>";
+		};
+		E3791B101ECD64B2003D638B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B111ECD64B2003D638B /* Appearance */,
+				E3791B131ECD64B2003D638B /* Assembly */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E3791B111ECD64B2003D638B /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B121ECD64B2003D638B /* AppearanceAdjuster.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		E3791B131ECD64B2003D638B /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B141ECD64B2003D638B /* ServicesAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		E3791B151ECD64B2003D638B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B161ECD64B2003D638B /* Common */,
+				E3791B211ECD64B2003D638B /* UIExtensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E3791B161ECD64B2003D638B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B191ECD64B2003D638B /* ErrorExtension.swift */,
+				E3791B1A1ECD64B2003D638B /* StringExtension.swift */,
+				E3791B1B1ECD64B2003D638B /* UIView+InstantiateFromNib.swift */,
+				E3791B1C1ECD64B2003D638B /* UIViewController+SBStoryboard.swift */,
+				E3791B1D1ECD64B2003D638B /* UnwrapExtension.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E3791B211ECD64B2003D638B /* UIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B221ECD64B2003D638B /* UIColor+Colors.swift */,
+				E3791B231ECD64B2003D638B /* UIViewController+HUD.swift */,
+			);
+			path = UIExtensions;
+			sourceTree = "<group>";
+		};
+		E3791B241ECD64B2003D638B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B251ECD64B2003D638B /* Images */,
+				E3791B271ECD64B2003D638B /* Info.plist */,
+				E3791B281ECD64B2003D638B /* LaunchScreen.storyboard */,
+				E3791B291ECD64B2003D638B /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E3791B251ECD64B2003D638B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B261ECD64B2003D638B /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		E3791B291ECD64B2003D638B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B2A1ECD64B2003D638B /* Localizable.strings */,
+				E3791B2C1ECD64B2003D638B /* Localization.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		E3791B571ECD74B6003D638B /* Request factory */ = {
+			isa = PBXGroup;
+			children = (
+				E3791B581ECD74B6003D638B /* RequestFactory.swift */,
+			);
+			path = "Request factory";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +395,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3791AD21ECD5B1D003D638B /* LaunchScreen.storyboard in Resources */,
-				E3791ACF1ECD5B1D003D638B /* Assets.xcassets in Resources */,
-				E3791ACD1ECD5B1D003D638B /* Main.storyboard in Resources */,
+				E3791B511ECD64B2003D638B /* Localizable.strings in Resources */,
+				E3791B4E1ECD64B2003D638B /* Assets.xcassets in Resources */,
+				E3791B501ECD64B2003D638B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,8 +415,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3791ACA1ECD5B1D003D638B /* ViewController.swift in Sources */,
-				E3791AC81ECD5B1D003D638B /* AppDelegate.swift in Sources */,
+				E3791B3F1ECD64B2003D638B /* NetworkDataKeys.swift in Sources */,
+				E3791B401ECD64B2003D638B /* RequestProcessor.swift in Sources */,
+				E3791B4C1ECD64B2003D638B /* UIColor+Colors.swift in Sources */,
+				E3791B411ECD64B2003D638B /* AppearanceAdjuster.swift in Sources */,
+				E3791B461ECD64B2003D638B /* StringExtension.swift in Sources */,
+				E3791B491ECD64B2003D638B /* UnwrapExtension.swift in Sources */,
+				E3791B471ECD64B2003D638B /* UIView+InstantiateFromNib.swift in Sources */,
+				E3791B2E1ECD64B2003D638B /* AssemblyCenter.swift in Sources */,
+				E3791B421ECD64B2003D638B /* ServicesAssembly.swift in Sources */,
+				E3791B591ECD74B6003D638B /* RequestFactory.swift in Sources */,
+				E3791B311ECD64B2003D638B /* Storyboard.swift in Sources */,
+				E3791B521ECD64B2003D638B /* Localization.swift in Sources */,
+				E3791B2D1ECD64B2003D638B /* AppDelegate.swift in Sources */,
+				E3791B3E1ECD64B2003D638B /* NetworkAssembly.swift in Sources */,
+				E3791B5B1ECD77E9003D638B /* Assembler.swift in Sources */,
+				E3791B481ECD64B2003D638B /* UIViewController+SBStoryboard.swift in Sources */,
+				E3791B2F1ECD64B2003D638B /* Assembly.swift in Sources */,
+				E3791B451ECD64B2003D638B /* ErrorExtension.swift in Sources */,
+				E3791B4D1ECD64B2003D638B /* UIViewController+HUD.swift in Sources */,
+				E3791B541ECD65BD003D638B /* Container.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,20 +457,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E3791ACB1ECD5B1D003D638B /* Main.storyboard */ = {
+		E3791B2A1ECD64B2003D638B /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E3791ACC1ECD5B1D003D638B /* Base */,
+				E3791B2B1ECD64B2003D638B /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E3791AD01ECD5B1D003D638B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E3791AD11ECD5B1D003D638B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -342,7 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HJQH8ETNCF;
-				INFOPLIST_FILE = TinkoffNews/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TinkoffNews/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.hokmt.TinkoffNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,7 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HJQH8ETNCF;
-				INFOPLIST_FILE = TinkoffNews/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TinkoffNews/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.hokmt.TinkoffNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,6 +636,7 @@
 				E3791AE31ECD5B1D003D638B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E3791AE41ECD5B1D003D638B /* Build configuration list for PBXNativeTarget "TinkoffNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +645,7 @@
 				E3791AE61ECD5B1D003D638B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
