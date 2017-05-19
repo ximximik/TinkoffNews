@@ -19,6 +19,7 @@
 		9AD2548310A16E023FD1BFC9 /* NewsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B6ED3AB027A301100DE61 /* NewsAssembly.swift */; };
 		9C7CC77A3F6D091806A3F579 /* NewsRequestPreparer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCC11B06676B81A36E16181 /* NewsRequestPreparer.swift */; };
 		B21FBB0DB73CB4110AEA40CB /* NewsAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDAFB11B26AA50957C01FFE /* NewsAccessor.swift */; };
+		E36C05511ECEB81300D016E4 /* CacheOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36C05501ECEB81000D016E4 /* CacheOperation.swift */; };
 		E3791ADD1ECD5B1D003D638B /* TinkoffNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791ADC1ECD5B1D003D638B /* TinkoffNewsTests.swift */; };
 		E3791B2D1ECD64B2003D638B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791AEA1ECD64B2003D638B /* AppDelegate.swift */; };
 		E3791B2E1ECD64B2003D638B /* AssemblyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3791AEC1ECD64B2003D638B /* AssemblyCenter.swift */; };
@@ -69,6 +70,7 @@
 		B590A3C5164C741224452D0D /* NewsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		CD69E614F00AD4537F770833 /* News.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = News.storyboard; path = Storyboard/News.storyboard; sourceTree = "<group>"; };
 		DCCC11B06676B81A36E16181 /* NewsRequestPreparer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NewsRequestPreparer.swift; sourceTree = "<group>"; };
+		E36C05501ECEB81000D016E4 /* CacheOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheOperation.swift; sourceTree = "<group>"; };
 		E3791AC41ECD5B1D003D638B /* TinkoffNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3791AD81ECD5B1D003D638B /* TinkoffNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3791ADC1ECD5B1D003D638B /* TinkoffNewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffNewsTests.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				B590A3C5164C741224452D0D /* NewsViewModel.swift */,
+				E36C05501ECEB81000D016E4 /* CacheOperation.swift */,
 			);
 			path = "View model";
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				E3791AC01ECD5B1D003D638B /* Sources */,
 				E3791AC11ECD5B1D003D638B /* Frameworks */,
 				E3791AC21ECD5B1D003D638B /* Resources */,
+				E36C05521ECEB9F500D016E4 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -527,6 +531,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E36C05521ECEB9F500D016E4 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E3791AC01ECD5B1D003D638B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -552,6 +573,7 @@
 				676E25551ECE3A60005A19E5 /* NewsArticleCell.swift in Sources */,
 				E3791B481ECD64B2003D638B /* UIViewController+Storyboard.swift in Sources */,
 				E3791B2F1ECD64B2003D638B /* Assembly.swift in Sources */,
+				E36C05511ECEB81300D016E4 /* CacheOperation.swift in Sources */,
 				E3791B451ECD64B2003D638B /* ErrorExtension.swift in Sources */,
 				E3791B4D1ECD64B2003D638B /* UIViewController+HUD.swift in Sources */,
 				E3791B541ECD65BD003D638B /* Container.swift in Sources */,
@@ -693,12 +715,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HJQH8ETNCF;
 				INFOPLIST_FILE = "$(SRCROOT)/TinkoffNews/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.hokmt.TinkoffNews;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hokmt.tinkoff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -707,12 +731,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HJQH8ETNCF;
 				INFOPLIST_FILE = "$(SRCROOT)/TinkoffNews/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ru.hokmt.TinkoffNews;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hokmt.tinkoff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

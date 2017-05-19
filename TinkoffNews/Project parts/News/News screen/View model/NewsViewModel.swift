@@ -11,11 +11,19 @@ public enum NewsViewModelState {
 }
 
 //MARK: ViewModel
-public class NewsViewModel {
+public class NewsViewModel: NewsViewModelsStorage {
     private let newsAccessor: NewsAccessorProtocol
     private var disposeBag = DisposeBag()
     private var articles: [Article] = []
-    private var cachedViewModels: [Int: NewsArticleCellViewModel] = [:]
+    
+    public var cachedViewModels: [Int: NewsArticleCellViewModel] = [:]
+    private lazy var cacheOperations: OperationQueue = {
+        var queue = OperationQueue()
+        queue.name = "Cache queue"
+        queue.qualityOfService = .background
+        queue.maxConcurrentOperationCount = 2
+        return queue
+    } ()
     
     private var state: NewsViewModelState = .normal {
         didSet {
@@ -39,6 +47,8 @@ public class NewsViewModel {
             .onSuccess { [weak self] articles in
                 self?.cachedViewModels.removeAll()
                 self?.articles = articles
+                self?.cacheOperations.cancelAllOperations()
+                self?.prefetchViewModels()
                 self?.state = .successful
             }
             .onError { [weak self] error in
@@ -62,6 +72,13 @@ public class NewsViewModel {
         return articles.count
     }
     
+    public func prefetchViewModels() {
+        for model in articles {
+            if cachedViewModels[model.id] == nil {
+                cacheOperations.addOperation(CacheOperation(model: model, storage: self))
+            }
+        }
+    }
 }
 
 extension NewsViewModelState: Equatable { }
