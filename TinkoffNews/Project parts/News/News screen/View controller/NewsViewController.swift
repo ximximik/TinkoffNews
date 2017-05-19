@@ -68,6 +68,12 @@ public class NewsViewController: UIViewController {
     public func refreshData() {
         viewModel.getNews()
     }
+
+    fileprivate func showArticle(at indexPath: IndexPath) {
+        let viewController = NewsStoryboard.articleViewController()
+        viewModel.configure(articleViewModel: viewController.viewModel, at: indexPath.row)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -89,5 +95,6 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        showArticle(at: indexPath)
     }
 }

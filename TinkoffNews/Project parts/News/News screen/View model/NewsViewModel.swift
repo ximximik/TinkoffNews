@@ -54,7 +54,7 @@ public class NewsViewModel: NewsViewModelsStorage {
             .onError { [weak self] error in
                 self?.state = .error(error as NSError)
             }
-            .addTo(disposeBag)
+            .add(to: disposeBag)
     }
     
     //MARK: Datasource
@@ -78,6 +78,11 @@ public class NewsViewModel: NewsViewModelsStorage {
                 cacheOperations.addOperation(CacheOperation(model: model, storage: self))
             }
         }
+    }
+
+    public func configure(articleViewModel: ArticleViewModel, at index: Int) {
+        let article = articles[index]
+        articleViewModel.set(articleID: article.id)
     }
 }
 

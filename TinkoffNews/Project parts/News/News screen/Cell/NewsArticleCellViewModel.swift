@@ -12,12 +12,7 @@ public class NewsArticleCellViewModel {
     
     public init(model: Article) {
         id = model.id
-        title = model.text.withoutHTML
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = .medium
-        dateFormatter.dateStyle = .long
-        
-        date = dateFormatter.string(from: model.date)
+        title = model.title.withoutHTML
+        date = model.date.formattedDateString
     }
 }

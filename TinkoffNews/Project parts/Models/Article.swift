@@ -10,13 +10,13 @@ import Foundation
 
 public struct Article {
     let id: Int
-    let text: String
+    let title: String
     let date: Date
-    let content: String
+    var content: String
     
-    public init(id: Int, text: String, date: Date, content: String = "") {
+    public init(id: Int, title: String, date: Date, content: String = "") {
         self.id = id
-        self.text = text
+        self.title = title
         self.date = date
         self.content = content
     }

@@ -13,4 +13,8 @@ public class NewsStoryboard: Storyboard {
     public class func newsViewController() -> NewsViewController {
         return instantiate(NewsViewController.self)
     }
+
+    public class func articleViewController() -> ArticleViewController {
+        return instantiate(ArticleViewController.self)
+    }
 }

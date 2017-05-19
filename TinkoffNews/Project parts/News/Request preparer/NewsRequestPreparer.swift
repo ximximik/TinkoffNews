@@ -5,20 +5,26 @@
 
 import Foundation
 
-public protocol NewsRequestPreparerProtocol {     
-	func getNews() -> URLRequest     
+public protocol NewsRequestPreparerProtocol {
+    func getNews() -> URLRequest
+    func getArticle(id: Int) -> URLRequest
 }
 
-public class NewsRequestPreparer: NewsRequestPreparerProtocol {     
+public class NewsRequestPreparer: NewsRequestPreparerProtocol {
     private let networkRequestFactory: NetworkRequestFactoryProtocol
     
     init(networkRequestFactory: NetworkRequestFactoryProtocol) {
         self.networkRequestFactory = networkRequestFactory
     }
-
+    
     public func getNews() -> URLRequest {
-        let params: [String: Any] = [:]
         return networkRequestFactory.prepareRequest(request: NetworkKeys.Requests.news,
+                                                    method: .get)
+    }
+    
+    public func getArticle(id: Int) -> URLRequest {
+        let params: [String: Any] = [NetworkKeys.Article.Title.id : id]
+        return networkRequestFactory.prepareRequest(request: NetworkKeys.Requests.articleContent,
                                                     method: .get,
                                                     params: params)
     }

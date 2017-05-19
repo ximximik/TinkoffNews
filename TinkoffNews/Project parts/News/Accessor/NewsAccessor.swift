@@ -3,16 +3,17 @@
 //  Copyright © 2017 HOKMT. All rights reserved.
 //
 
-import Foundation 
+import Foundation
 
-public protocol NewsAccessorProtocol {     
-	func getNews() -> Request<[Article]>     
+public protocol NewsAccessorProtocol {
+    func getNews() -> Request<[Article]>
+    func getArticle(id: Int) -> Request<Article>
 }
 
 public class NewsAccessor: NewsAccessorProtocol {
     private let requestPreparer: NewsRequestPreparerProtocol
     private let parser: NewsParserProtocol
-    
+
     init(requestPreparer: NewsRequestPreparerProtocol,
          parser: NewsParserProtocol) {
         self.requestPreparer = requestPreparer
@@ -21,6 +22,11 @@ public class NewsAccessor: NewsAccessorProtocol {
 
     public func getNews() -> Request<[Article]> {
         return Request(urlRequest: requestPreparer.getNews(),
-                       handler: parser.parse(newsData:))
+                handler: parser.parse(newsData:))
+    }
+
+    public func getArticle(id: Int) -> Request<Article> {
+        return Request(urlRequest: requestPreparer.getArticle(id: id),
+                handler: parser.parse(articleData:))
     }
 }

@@ -7,7 +7,7 @@ import Foundation
 
 public protocol Disposable {
     func dispose()
-    func addTo(_ disposeBag: DisposeBag)
+    func add(to disposeBag: DisposeBag)
 }
 
 open class DisposeBag {
@@ -26,7 +26,7 @@ open class DisposeBag {
 }
 
 extension Disposable {
-    public func addTo(_ disposeBag: DisposeBag) {
+    public func add(to disposeBag: DisposeBag) {
         disposeBag.add(self)
     }
 }

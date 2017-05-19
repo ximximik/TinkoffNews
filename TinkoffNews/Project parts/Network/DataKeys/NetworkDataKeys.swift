@@ -5,22 +5,27 @@
 
 enum NetworkKeys {
     static let APIBaseURL = "https://api.tinkoff.ru/v1/"
-    
+
     enum Requests {
         static let news = "news"
+        static let articleContent = "news_content"
     }
-    
-    enum News {
-        static let payload = "payload"
-        
-        enum Payload {
+
+    enum Article {
+        static let content = "content"
+
+        static let titlePayload = "title"
+
+        enum Title {
             static let id = "id"
-            static let text = "text"
+            static let title = "text"
             static let publicationDate = "publicationDate"
-            
+
             enum PublicationDate {
                 static let milliseconds = "milliseconds"
             }
         }
     }
+
+    static let payload = "payload"
 }

@@ -28,6 +28,14 @@ public class NewsAssembly: Assembly {
         container.registerInjection(NewsViewController.self) { r, c in
             c.viewModel = r.resolve(NewsViewModel.self)
         }
+
+        //ArticleViewController
+        container.register(ArticleViewModel.self) { r in
+            ArticleViewModel(newsAccessor: self.accessor())
+        }
+        container.registerInjection(ArticleViewController.self) { r, c in
+            c.viewModel = r.resolve(ArticleViewModel.self)
+        }
     }
     
     public class func parser() -> NewsParserProtocol {
