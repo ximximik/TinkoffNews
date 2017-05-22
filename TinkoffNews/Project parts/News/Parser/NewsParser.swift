@@ -45,7 +45,7 @@ public class NewsParser: NewsParserProtocol {
 
         var article = try parse(articleTitleJSON: titlePayload)
         article.content = content
-
+        
         return article
     }
 }

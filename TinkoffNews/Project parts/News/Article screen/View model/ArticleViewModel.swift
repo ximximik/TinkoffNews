@@ -30,7 +30,12 @@ public class ArticleViewModel {
     }
 
     //MARK: Bindings
-    public var stateChanged: ((ArticleViewModelState) -> Void)?
+    public var stateChanged: ((ArticleViewModelState) -> Void)? {
+        didSet {
+            stateChanged?(state)
+        }
+    }
+    
     public var titleChanged: ((String?) -> Void)?
     public var dateChanged: ((String?) -> Void)?
     public var contentChanged: ((String?) -> Void)?
@@ -47,6 +52,9 @@ public class ArticleViewModel {
     private func loadArticle(id: Int) {
         state = .loading
         newsAccessor.getArticle(id: id)
+                .onCache { [weak self] article in
+                    self?.article = article
+                }
                 .onSuccess { [weak self] article in
                     self?.article = article
                     self?.state = .successful

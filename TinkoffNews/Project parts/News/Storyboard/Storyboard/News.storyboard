@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="-0.80000000000000004" y="-0.44977511244377816"/>
         </scene>
-        <!--Article View Controller-->
+        <!--Tinkoff News-->
         <scene sceneID="vGj-Ww-Sep">
             <objects>
-                <viewController storyboardIdentifier="ArticleViewController" id="U7j-6H-Fnk" customClass="ArticleViewController" customModule="TinkoffNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleViewController" title="Tinkoff News" id="U7j-6H-Fnk" customClass="ArticleViewController" customModule="TinkoffNews" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p9O-wM-w4o"/>
                         <viewControllerLayoutGuide type="bottom" id="Acu-bq-oSc"/>

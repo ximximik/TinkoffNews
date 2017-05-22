@@ -10,28 +10,53 @@ open class Request<T> {
     public typealias ErrorActions = (Error) -> Void
     
     open var dataTask: URLSessionDataTask?
-    open var successActions: SuccessActions?
-    open var errorActions: ErrorActions?
+    private var successActions: [SuccessActions]
+    private var cacheActions: [SuccessActions]
+    private var errorActions: [ErrorActions]
     
-    init(urlRequest: URLRequest, handler: @escaping  ((Data) throws -> T)) {
-        successActions = nil
-        errorActions = nil
+    private var cachedData: T?
+    
+    init(urlRequest: URLRequest, handler: @escaping  ((Data) throws -> T), cacheTask: ((Void) -> T?)? = nil) {
+        successActions = []
+        errorActions = []
+        cacheActions = []
+        
+        if let cacheTask = cacheTask {
+            DispatchQueue.global(qos: .utility).async { [weak self] in
+                if let cachedData = cacheTask() {
+                    self?.cachedData = cachedData
+                    for cacheAction in self?.cacheActions ?? [] {
+                        cacheAction(cachedData)
+                    }
+                }
+            }
+        }
         
         dataTask = URLSession.shared.dataTask(with: urlRequest) { [weak self] data, response, error in
             DispatchQueue.global(qos: .utility).async {
                 guard let sSelf = self else { return }
-                if let error = error {
-                    sSelf.errorActions?(error)
-                    return
+                var error: Error? = error
+                
+                defer {
+                    if let error = error {
+                        for errorAction in sSelf.errorActions {
+                            errorAction(error)
+                        }
+                    }
                 }
+                
+                if let _ = error { return }
+                
                 
                 guard let data = data else { return }
                 
                 do {
                     let object = try handler(data)
-                    sSelf.successActions?(object)
+                    for successAction in sSelf.successActions {
+                        successAction(object)
+                    }
                 } catch let parseError {
-                    sSelf.errorActions?(parseError)
+                    error = parseError
                 }
             }
         }
@@ -39,13 +64,21 @@ open class Request<T> {
     }
     
     //MARK: -
+    open func onCache(_ cacheActions: @escaping SuccessActions) -> Self {
+        self.cacheActions.append(cacheActions)
+        if let cachedData = cachedData {
+            cacheActions(cachedData)
+        }
+        return self
+    }
+    
     open func onSuccess(_ successActions: @escaping SuccessActions) -> Self {
-        self.successActions = successActions
+        self.successActions.append(successActions)
         return self
     }
     
     open func onError(_ errorActions: @escaping ErrorActions) -> Self {
-        self.errorActions = errorActions
+        self.errorActions.append(errorActions)
         return self
     }
 }

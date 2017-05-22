@@ -7,7 +7,7 @@ import Foundation
 
 //MARK: Enums
 public enum NewsViewModelState {
-    case normal, loading, error(NSError), successful
+    case normal, loading, error(NSError), successful, cachedDataLoaded
 }
 
 //MARK: ViewModel
@@ -44,12 +44,23 @@ public class NewsViewModel: NewsViewModelsStorage {
         
         state = .loading
         newsAccessor.getNews()
+            .onCache { [weak self] articles in
+                guard let sSelf = self else { return }
+                if sSelf.articles.count == 0 {
+                    sSelf.articles = articles
+                    sSelf.cacheOperations.cancelAllOperations()
+                    sSelf.prefetchViewModels()
+                    sSelf.state = .cachedDataLoaded
+                }
+            }
             .onSuccess { [weak self] articles in
-                self?.cachedViewModels.removeAll()
-                self?.articles = articles
-                self?.cacheOperations.cancelAllOperations()
-                self?.prefetchViewModels()
-                self?.state = .successful
+                guard let sSelf = self else { return }
+                let sortedArticles = articles.sorted { $0.date > $1.date }
+                sSelf.cachedViewModels.removeAll()
+                sSelf.articles = sortedArticles
+                sSelf.cacheOperations.cancelAllOperations()
+                sSelf.prefetchViewModels()
+                sSelf.state = .successful
             }
             .onError { [weak self] error in
                 self?.state = .error(error as NSError)
@@ -93,6 +104,8 @@ public func == (lhs: NewsViewModelState, rhs: NewsViewModelState) -> Bool {
     case (.normal, .normal):
         return true
     case (.successful, .successful):
+        return true
+    case (.cachedDataLoaded, .cachedDataLoaded):
         return true
     case (.loading, .loading):
         return true

@@ -5,7 +5,6 @@
 import Foundation
 
 public let eInvalidResponseErrorText = NSLocalizedString("invalidServerResponseErrorText", comment: "")
-public let eFillAllFieldsErrorText = NSLocalizedString("fillAllFieldsErrorText", comment: "")
 
 extension Error {
     static var invalidResponse: NSError {

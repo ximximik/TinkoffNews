@@ -31,23 +31,25 @@ public class NewsViewController: UIViewController {
     
     private func setupBindings() {
         viewModel.stateChanged = { [weak self] state in
-            guard let sSelf = self else { return }
-            switch state {
-            case .normal:
-                sSelf.hideStatusHud()
-                sSelf.refreshControl.endRefreshing()
-            case .successful:
-                sSelf.hideStatusHud()
-                sSelf.refreshControl.endRefreshing()
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                guard let sSelf = self else { return }
+                switch state {
+                case .normal:
+                    sSelf.hideStatusHud()
+                    sSelf.refreshControl.endRefreshing()
+                case .cachedDataLoaded:
+                    sSelf.tableView.reloadData()
+                case .successful:
+                    sSelf.hideStatusHud()
+                    sSelf.refreshControl.endRefreshing()
+                    sSelf.tableView.reloadData()
+                case .loading:
+                    sSelf.showStatusHud()
+                case .error(let error):
+                    sSelf.hideStatusHud()
+                    sSelf.refreshControl.endRefreshing()
+                    sSelf.showAlert(with: error)
                 }
-            case .loading:
-                sSelf.showStatusHud()
-            case .error(let error):
-                sSelf.hideStatusHud()
-                sSelf.refreshControl.endRefreshing()
-                sSelf.showAlert(with: error)
             }
         }
         
