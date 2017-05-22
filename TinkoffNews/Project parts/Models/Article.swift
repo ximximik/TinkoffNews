@@ -37,6 +37,6 @@ extension _Article {
         id = Int32(article.id)
         title = article.title
         date = article.date as NSDate
-        content = article.content
+        content ?= article.content
     }
 }

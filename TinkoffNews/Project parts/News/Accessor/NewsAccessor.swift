@@ -52,7 +52,6 @@ public class NewsAccessor: NewsAccessorProtocol {
     
     public func save(articles: [Article]) {
         DispatchQueue.main.async {
-            Storage.shared.clear()
             for article in articles {
                 let _article = Storage.shared.createArticle(id: article.id)
                 _article.copyValues(from: article)
