@@ -65,4 +65,14 @@ extension ArticleViewController: UIWebViewDelegate {
             self?.webViewHeightConstraint.constant = webView.scrollView.contentSize.height
         }
     }
+    
+    public func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if navigationType != .linkClicked {
+            return true
+        }
+        if let url = request.url {
+            UIApplication.shared.openURL(url)
+        }
+        return false
+    }
 }
