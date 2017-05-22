@@ -23,8 +23,8 @@ extension UIColor {
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
-//    Example for custom color
-//    class var fi_red: UIColor {
-//        return UIColor(hexString: "d62812")
-//    }
+    
+    class var tn_background: UIColor {
+        return UIColor(hexString: "3C4759")
+    }
 }

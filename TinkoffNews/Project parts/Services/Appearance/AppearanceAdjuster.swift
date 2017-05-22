@@ -18,7 +18,7 @@ public class AppearanceAdjusterDefault: AppearanceAdjuster {
     
     private func setupNavigationBar() {
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = UIColor.black
+        UINavigationBar.appearance().barTintColor = UIColor.tn_background
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     }
