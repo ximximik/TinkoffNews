@@ -47,7 +47,6 @@ open class Request<T> {
                 
                 if let _ = error { return }
                 
-                
                 guard let data = data else { return }
                 
                 do {

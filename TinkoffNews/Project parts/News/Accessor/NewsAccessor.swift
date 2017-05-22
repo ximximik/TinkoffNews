@@ -52,9 +52,14 @@ public class NewsAccessor: NewsAccessorProtocol {
     
     public func save(articles: [Article]) {
         DispatchQueue.main.async {
+            let cachedArticles = Storage.shared.articlesSortedByDate()
             for article in articles {
-                let _article = Storage.shared.createArticle(id: article.id)
-                _article.copyValues(from: article)
+                if let _article = cachedArticles.first(where: { $0.id == Int32(article.id) }) {
+                    _article.copyValues(from: article)
+                } else {
+                    let _article = Storage.shared.createArticle(id: article.id)
+                    _article.copyValues(from: article)
+                }
             }
             Storage.shared.saveContext()
         }

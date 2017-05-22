@@ -20,6 +20,11 @@ public class ArticleViewController: UIViewController {
         setupBindings()
         setupWebView()
     }
+    
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        hideStatusHud()
+    }
 
     private func setupBindings() {
         viewModel.stateChanged = { [weak self] state in
