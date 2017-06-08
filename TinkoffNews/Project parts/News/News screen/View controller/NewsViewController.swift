@@ -67,7 +67,7 @@ public class NewsViewController: UIViewController {
         }
     }
     
-    public func refreshData() {
+    @objc public func refreshData() {
         viewModel.getNews()
     }
 

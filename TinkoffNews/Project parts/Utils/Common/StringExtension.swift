@@ -21,16 +21,11 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
     
-    var length: Int {
-        return characters.count
-    }
-    
     var withoutHTML: String {
         do {
             guard let htmlStringData = self.data(using: String.Encoding.utf8) else { return self }
             
-            let options: [String: Any] = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSCharacterEncodingDocumentAttribute: NSNumber(value: String.Encoding.utf8.rawValue)]
-            
+            let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: NSNumber(value: String.Encoding.utf8.rawValue)]
             let attributedHTMLString = try NSAttributedString(data: htmlStringData, options: options, documentAttributes: nil)
             
             return attributedHTMLString.string

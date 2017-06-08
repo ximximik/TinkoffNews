@@ -57,8 +57,8 @@ class NetworkRequestFactory: NetworkRequestFactoryProtocol {
     func prepareParams(params: [String: Any], requestString: inout String, request: inout URLRequest, method: NetworkRequestMethod) {
         
         if method == .get {
-            let parameterArray = params.map { (key, value) -> String in
-                return "\(key)=\(String(describing: value))"
+            let parameterArray = params.map { (arg) -> String in
+                return "\(arg.key)=\(String(describing: arg.value))"
             }
             requestString = requestString + "?" + parameterArray.joined(separator: "&")
         } else {

@@ -5,7 +5,7 @@
 import UIKit
 
 extension UIViewController {
-    func showAlert(with error: NSError, additionalAction: ((Void) -> Void)? = nil) {
+    func showAlert(with error: NSError, additionalAction: (() -> Void)? = nil) {
         var message = error.localizedDescription
         if message.isEmpty {
             message = error.domain
@@ -13,7 +13,7 @@ extension UIViewController {
         showOkAlert(title: NSLocalizedString("errorAlertTitle", comment: ""), message: NSLocalizedString(message, comment: ""), additionalAction: additionalAction)
     }
     
-    func showOkAlert(title: String, message: String? = "", additionalAction: ((Void) -> Void)? = nil) {
+    func showOkAlert(title: String, message: String? = "", additionalAction: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)

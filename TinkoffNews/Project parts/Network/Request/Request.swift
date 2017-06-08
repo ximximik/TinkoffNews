@@ -16,7 +16,7 @@ open class Request<T> {
     
     private var cachedData: T?
     
-    init(urlRequest: URLRequest, handler: @escaping  ((Data) throws -> T), cacheTask: ((Void) -> T?)? = nil) {
+    init(urlRequest: URLRequest, handler: @escaping  ((Data) throws -> T), cacheTask: (() -> T?)? = nil) {
         successActions = []
         errorActions = []
         cacheActions = []

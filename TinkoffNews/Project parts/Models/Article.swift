@@ -36,7 +36,7 @@ extension _Article {
     public func copyValues(from article: Article) {
         id = Int32(article.id)
         title = article.title
-        date = article.date as NSDate
+        date = article.date
         
         if content == nil || !article.content.isEmpty {
             content = article.content

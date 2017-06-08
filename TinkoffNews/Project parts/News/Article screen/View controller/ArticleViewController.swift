@@ -28,17 +28,19 @@ public class ArticleViewController: UIViewController {
 
     private func setupBindings() {
         viewModel.stateChanged = { [weak self] state in
-            guard let sSelf = self else { return }
-            switch state {
-            case .normal:
-                sSelf.hideStatusHud()
-            case .successful:
-                sSelf.hideStatusHud()
-            case .loading:
-                sSelf.showStatusHud()
-            case .error(let error):
-                sSelf.hideStatusHud()
-                sSelf.showAlert(with: error)
+            DispatchQueue.main.async {
+                guard let sSelf = self else { return }
+                switch state {
+                case .normal:
+                    sSelf.hideStatusHud()
+                case .successful:
+                    sSelf.hideStatusHud()
+                case .loading:
+                    sSelf.showStatusHud()
+                case .error(let error):
+                    sSelf.hideStatusHud()
+                    sSelf.showAlert(with: error)
+                }
             }
         }
 
